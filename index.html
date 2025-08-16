@@ -1,3 +1,290 @@
-Merhaba, siteme hoş geldiniz
+Merhaba, siteme hoş geldiniz <br
 
 Bu site benim kişisel web sayfam
+
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ad Soyad – Kişisel Web Sitesi</title>
+  <meta name="description" content="Kısa biyografi, projeler ve iletişim bilgileri içeren kişisel web sitesi örneği." />
+  <meta name="color-scheme" content="light dark" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #0b0c10;
+      --panel:#111319;
+      --muted:#94a3b8;
+      --text:#e5e7eb;
+      --brand:#7c3aed; /* mor */
+      --brand-2:#22d3ee; /* camgöbeği */
+      --ring: rgba(124,58,237,.35);
+      --card:#0f1117;
+      --border: #1e2636;
+      --shadow: 0 10px 30px rgba(0,0,0,.25);
+    }
+    @media (prefers-color-scheme: light) {
+      :root{ --bg:#f8fafc; --panel:#ffffff; --card:#ffffff; --text:#0f172a; --muted:#475569; --border:#e2e8f0; --shadow: 0 10px 24px rgba(2,6,23,.08); }
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;background:linear-gradient(120deg,var(--bg),#0f1117 30%,var(--bg) 100%);color:var(--text);}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{width:min(1100px,92%);margin-inline:auto}
+    .nav{position:sticky;top:0;backdrop-filter:saturate(140%) blur(8px);background:color-mix(in oklab, var(--panel) 80%, transparent);border-bottom:1px solid var(--border);z-index:10}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:.9rem 0}
+    .brand{display:flex;gap:.75rem;align-items:center;font-weight:700}
+    .dot{width:12px;height:12px;border-radius:50%;background:linear-gradient(135deg,var(--brand),var(--brand-2));box-shadow:0 0 0 4px color-mix(in oklab, var(--ring) 40%, transparent)}
+    .menu{display:flex;gap:1rem}
+    .menu a{padding:.55rem .8rem;border-radius:10px}
+    .menu a:hover{background:color-mix(in oklab, var(--panel) 86%, transparent)}
+
+    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:2rem;align-items:center;padding:5rem 0}
+    .hero h1{font-size:clamp(2.2rem,3.6vw,3.2rem);line-height:1.1;margin:.2rem 0 1rem 0}
+    .subtitle{color:var(--muted);font-size:1.05rem}
+    .badge{display:inline-flex;align-items:center;gap:.5rem;border:1px solid var(--border);padding:.35rem .6rem;border-radius:999px;font-size:.9rem;background:color-mix(in oklab, var(--panel) 88%, transparent)}
+    .badge .pulse{width:8px;height:8px;border-radius:50%;background:var(--brand);box-shadow:0 0 0 6px color-mix(in oklab, var(--ring) 35%, transparent)}
+    .cta{display:flex;gap:.8rem;margin-top:1.3rem}
+    .btn{display:inline-flex;align-items:center;gap:.6rem;padding:.8rem 1rem;border-radius:14px;border:1px solid var(--border);background:linear-gradient(135deg, color-mix(in oklab, var(--panel) 70%, transparent), color-mix(in oklab, var(--panel) 90%, transparent));box-shadow:var(--shadow);font-weight:600}
+    .btn:hover{transform:translateY(-1px);transition:.2s ease}
+    .btn.primary{border-color:transparent;background:linear-gradient(135deg,var(--brand),var(--brand-2));color:white}
+    .portrait{border-radius:20px;overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow)}
+
+    section{padding:3.5rem 0}
+    .section-title{font-size:1.6rem;margin:0 0 1rem 0}
+
+    .about{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:1.2rem 1.2rem 1.4rem 1.2rem;box-shadow:var(--shadow)}
+    .list{display:grid;gap:.65rem;margin:0;padding:0;list-style:none}
+
+    .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+    .chip{display:inline-flex;align-items:center;gap:.5rem;border:1px solid var(--border);padding:.5rem .7rem;border-radius:999px;background:color-mix(in oklab, var(--panel) 88%, transparent);font-size:.95rem}
+
+    .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.2rem}
+    .project{display:flex;flex-direction:column}
+    .project img{aspect-ratio:16/10;object-fit:cover;border-top-left-radius:16px;border-top-right-radius:16px;border:1px solid var(--border);border-bottom:none}
+    .project .body{border:1px solid var(--border);border-top:none;background:var(--panel);padding:1rem;border-bottom-left-radius:16px;border-bottom-right-radius:16px;flex:1}
+    .project .tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.75rem}
+
+    .timeline{position:relative;margin:0;padding-left:1.2rem}
+    .timeline:before{content:"";position:absolute;left:.2rem;top:.2rem;bottom:.2rem;width:2px;background:var(--border)}
+    .timeline li{list-style:none;margin:0 0 1.2rem 0;position:relative}
+    .timeline li::marker{display:none}
+    .timeline li:before{content:"";position:absolute;left:-.05rem;top:.2rem;width:.65rem;height:.65rem;border-radius:50%;background:linear-gradient(135deg,var(--brand),var(--brand-2));box-shadow:0 0 0 4px color-mix(in oklab, var(--ring) 40%, transparent)}
+
+    form{display:grid;gap:.8rem}
+    input,textarea{width:100%;padding:.9rem 1rem;border-radius:12px;border:1px solid var(--border);background:color-mix(in oklab, var(--panel) 90%, transparent);color:inherit}
+    textarea{min-height:140px;resize:vertical}
+
+    .footer{padding:2.5rem 0;border-top:1px solid var(--border);color:var(--muted);text-align:center}
+
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+
+    @media (max-width: 900px){
+      .hero{grid-template-columns:1fr;gap:1.3rem;padding:3.5rem 0 2.5rem}
+      .about{grid-template-columns:1fr}
+      .grid-2,.grid-3{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="#" class="brand" aria-label="Ana sayfa">
+        <span class="dot" aria-hidden="true"></span>
+        <span>Ad Soyad</span>
+      </a>
+      <nav class="menu" aria-label="Birincil">
+        <a href="#hakkimda">Hakkımda</a>
+        <a href="#projeler">Projeler</a>
+        <a href="#deneyim">Deneyim</a>
+        <a href="#iletisim">İletişim</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <div>
+        <span class="badge"><span class="pulse" aria-hidden="true"></span> Merhaba! Ben <strong>Ad Soyad</strong></span>
+        <h1>Geliştirici • Tasarım Meraklısı • Öğrenmeyi Seven</h1>
+        <p class="subtitle">Web uygulamaları, kullanıcı deneyimi ve üretkenlik araçları üzerine çalışıyorum. Basit çözümlerle gerçek problemleri çözmeyi seviyorum.</p>
+        <div class="cta">
+          <a class="btn primary" href="#projeler">Projelerime Göz At</a>
+          <a class="btn" href="#iletisim" aria-label="İletişime geç">İletişime Geç</a>
+          <button class="btn" id="themeToggle" type="button" aria-pressed="false">🌗 Tema</button>
+        </div>
+      </div>
+      <div class="portrait">
+        <img alt="Profil resmi veya illüstrasyon" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1200&auto=format&fit=crop" />
+      </div>
+    </section>
+
+    <section id="hakkimda" class="container">
+      <h2 class="section-title">Hakkımda</h2>
+      <div class="about">
+        <article class="card">
+          <p>Merhaba! Ben <strong>Ad Soyad</strong>. Front‑end ağırlıklı çalışan, tasarımla kodu buluşturan bir geliştiriciyim. Modern, erişilebilir ve performanslı arayüzler inşa etmeyi seviyorum.</p>
+          <ul class="list">
+            <li>📍 İstanbul, Türkiye</li>
+            <li>🎓 X Üniversitesi – Bilgisayar Mühendisliği (3. sınıf)</li>
+            <li>💼 Serbest çalışıyorum; proje ve staj tekliflerine açığım.</li>
+          </ul>
+        </article>
+        <aside class="card">
+          <h3>Yetenekler</h3>
+          <div class="skills" aria-label="Yetenek etiketleri">
+            <span class="chip">HTML5</span>
+            <span class="chip">CSS3 / Sass</span>
+            <span class="chip">JavaScript</span>
+            <span class="chip">Accessibility (A11y)</span>
+            <span class="chip">React (temel)</span>
+            <span class="chip">Figma</span>
+            <span class="chip">Git & GitHub</span>
+          </div>
+          <div class="cta" style="margin-top:1rem">
+            <a class="btn" href="#" download>📄 Özgeçmişi İndir (PDF)</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="projeler" class="container">
+      <h2 class="section-title">Öne Çıkan Projeler</h2>
+      <div class="projects">
+        <article class="project">
+          <img src="https://images.unsplash.com/photo-1523473827532-848fe0bfe402?q=80&w=1200&auto=format&fit=crop" alt="Proje 1 kapak" />
+          <div class="body">
+            <h3>Görev Takip Uygulaması</h3>
+            <p>Küçük ekipler için basit ve hızlı görev yönetimi. Yerel depolama, filtreleme ve drag‑and‑drop desteği.</p>
+            <div class="tags">
+              <span class="chip">HTML</span>
+              <span class="chip">CSS</span>
+              <span class="chip">JS</span>
+            </div>
+          </div>
+        </article>
+        <article class="project">
+          <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1200&auto=format&fit=crop" alt="Proje 2 kapak" />
+          <div class="body">
+            <h3>Kişisel Blog Şablonu</h3>
+            <p>Statik HTML ile hızlı blog. Okunabilirlik odaklı tipografi ve karanlık/aydınlık tema.</p>
+            <div class="tags">
+              <span class="chip">HTML</span>
+              <span class="chip">Vanilla JS</span>
+            </div>
+          </div>
+        </article>
+        <article class="project">
+          <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1200&auto=format&fit=crop" alt="Proje 3 kapak" />
+          <div class="body">
+            <h3>Not Uygulaması</h3>
+            <p>Markdown destekli not alma. PWA olarak çevrimdışı çalışır ve cihazlar arası senkron için hazır mimari.</p>
+            <div class="tags">
+              <span class="chip">HTML</span>
+              <span class="chip">LocalStorage</span>
+              <span class="chip">PWA</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="deneyim" class="container">
+      <h2 class="section-title">Deneyim & Eğitim</h2>
+      <ol class="timeline">
+        <li>
+          <h3>Front‑end Stajyeri – ABC Tech <small style="color:var(--muted);font-weight:500">(2024 Yaz)</small></h3>
+          <p>Kurum içi dashboard için komponent kütüphanesi geliştirdim, erişilebilirlik kontrolleri yaptım.</p>
+        </li>
+        <li>
+          <h3>Freelance – Kişisel Projeler <small style="color:var(--muted);font-weight:500">(2023‑…)</small></h3>
+          <p>Küçük işletmeler için tek sayfa web siteleri ve blog temaları oluşturdum.</p>
+        </li>
+        <li>
+          <h3>Bilgisayar Mühendisliği – X Üniversitesi <small style="color:var(--muted);font-weight:500">(2022‑…)</small></h3>
+          <p>Algoritmalar, veri yapıları ve HCI derslerine özellikle ilgi duyuyorum.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="iletisim" class="container">
+      <h2 class="section-title">İletişim</h2>
+      <div class="grid-2">
+        <form id="contactForm" class="card" novalidate>
+          <label>
+            <span>Adınız</span>
+            <input type="text" name="name" placeholder="Ad Soyad" required />
+          </label>
+          <label>
+            <span>E‑posta</span>
+            <input type="email" name="email" placeholder="ornek@posta.com" required />
+          </label>
+          <label>
+            <span>Mesajınız</span>
+            <textarea name="message" placeholder="Merhaba…" required></textarea>
+          </label>
+          <button class="btn primary" type="submit">Mesajı Gönder</button>
+          <p id="formMsg" class="subtitle" role="status" aria-live="polite"></p>
+        </form>
+        <aside class="card">
+          <h3>Bağlantılar</h3>
+          <ul class="list">
+            <li>✉️ <a href="mailto:ad@ornek.com">ad@ornek.com</a></li>
+            <li>💼 <a href="#" rel="noreferrer">LinkedIn</a></li>
+            <li>🐙 <a href="#" rel="noreferrer">GitHub</a></li>
+            <li>🐦 <a href="#" rel="noreferrer">X / Twitter</a></li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">© <span id="year"></span> Ad Soyad — Tüm hakları saklıdır.</div>
+  </footer>
+
+  <script>
+    // Yıl
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Basit tema değiştirici
+    const toggle = document.getElementById('themeToggle');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+    const setTheme = (mode) => {
+      document.documentElement.style.colorScheme = mode;
+      localStorage.setItem('theme', mode);
+    }
+    const init = () => {
+      const saved = localStorage.getItem('theme');
+      if(saved){ setTheme(saved); }
+      toggle.setAttribute('aria-pressed', (localStorage.getItem('theme') === 'dark'))
+    }
+    toggle?.addEventListener('click', () => {
+      const current = localStorage.getItem('theme') || (prefersDark.matches ? 'dark' : 'light');
+      const next = current === 'dark' ? 'light' : 'dark';
+      setTheme(next);
+      toggle.setAttribute('aria-pressed', next === 'dark');
+    });
+    init();
+
+    // Basit form doğrulama (demo)
+    const form = document.getElementById('contactForm');
+    const msg = document.getElementById('formMsg');
+    form?.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(form));
+      if(!data.name || !data.email || !data.message){
+        msg.textContent = 'Lütfen tüm alanları doldurun.';
+        return;
+      }
+      msg.textContent = 'Teşekkürler! Mesajınız alındı (demo).';
+      form.reset();
+    });
+  </script>
+</body>
+</html>
