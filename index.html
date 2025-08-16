@@ -56,6 +56,33 @@
       padding: 15px;
       margin-top: 30px;
     }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .contact-form input, .contact-form textarea, .contact-form button {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    .contact-form button {
+      background: #4a90e2;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .contact-form button:hover {
+      background: #357ABD;
+    }
   </style>
 </head>
 <body>
@@ -69,6 +96,7 @@
     <a href="#hobiler">İlgi Alanlarım</a>
     <a href="#dersler">Sevdiğim Dersler</a>
     <a href="#projeler">Projelerim</a>
+    <a href="#galeri">Galeri</a>
     <a href="#hedefler">Hedeflerim</a>
     <a href="#iletisim">İletişim</a>
   </nav>
@@ -114,6 +142,18 @@
     </div>
   </section>
 
+  <section id="galeri">
+    <h2>Galeri</h2>
+    <div class="card">
+      <p>Çalışmalarım ve ilgi alanlarımdan kareler:</p>
+      <div class="gallery">
+        <img src="https://via.placeholder.com/150" alt="Resim çalışması" />
+        <img src="https://via.placeholder.com/150" alt="Piyano çalarken" />
+        <img src="https://via.placeholder.com/150" alt="Satranç turnuvası" />
+      </div>
+    </div>
+  </section>
+
   <section id="hedefler">
     <h2>Hedeflerim</h2>
     <div class="card">
@@ -127,8 +167,14 @@
 
   <section id="iletisim">
     <h2>İletişim</h2>
-    <div class="card">
-      <p>Bana ulaşmak için e‑posta gönderebilirsiniz: <a href="mailto:gizemdefne@gmail.com">gizemdefne@gmail.com</a></p>
+    <div class="card contact-form">
+      <form>
+        <input type="text" placeholder="Adınız" required />
+        <input type="email" placeholder="E‑posta" required />
+        <textarea rows="5" placeholder="Mesajınız" required></textarea>
+        <button type="submit">Gönder</button>
+      </form>
+      <p>Ya da doğrudan e‑posta gönderebilirsiniz: <a href="mailto:gizemdefne@gmail.com">gizemdefne@gmail.com</a></p>
     </div>
   </section>
 
@@ -137,3 +183,4 @@
   </footer>
 </body>
 </html>
+
