@@ -1,186 +1,142 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
   <title>Gizem Defne - Kişisel Web Sitesi</title>
   <style>
     body {
       font-family: Arial, sans-serif;
+      line-height: 1.6;
       margin: 0;
       padding: 0;
-      background: #f5f5f5;
+      background-color: #f9f9f9;
       color: #333;
     }
     header {
-      background: #4a90e2;
+      background: #6c63ff;
       color: white;
-      padding: 20px;
+      padding: 20px 0;
       text-align: center;
     }
+    header img {
+      width: 150px;
+      border-radius: 50%;
+      margin-top: 10px;
+    }
     nav {
-      background: #357ABD;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
+      background: #444;
+      color: white;
       padding: 10px;
+      text-align: center;
     }
     nav a {
       color: white;
+      margin: 0 15px;
       text-decoration: none;
-      font-weight: bold;
-    }
-    nav a:hover {
-      text-decoration: underline;
     }
     section {
-      padding: 40px;
+      padding: 20px;
       max-width: 800px;
       margin: auto;
     }
     h2 {
-      border-bottom: 2px solid #4a90e2;
+      color: #6c63ff;
+      border-bottom: 2px solid #ddd;
       padding-bottom: 5px;
     }
-    .card {
-      background: white;
-      padding: 20px;
-      margin: 20px 0;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
     footer {
-      background: #4a90e2;
+      background: #444;
       color: white;
       text-align: center;
       padding: 15px;
-      margin-top: 30px;
+      margin-top: 20px;
     }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 15px;
-    }
-    .gallery img {
-      width: 100%;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-    .contact-form input, .contact-form textarea, .contact-form button {
-      width: 100%;
-      padding: 10px;
-      margin: 8px 0;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-    }
-    .contact-form button {
-      background: #4a90e2;
+    a.button {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 15px;
+      background: #6c63ff;
       color: white;
-      border: none;
-      cursor: pointer;
-      font-weight: bold;
+      text-decoration: none;
+      border-radius: 5px;
     }
-    .contact-form button:hover {
-      background: #357ABD;
+    a.button:hover {
+      background: #5750d3;
     }
   </style>
 </head>
 <body>
+
   <header>
-    <h1>Merhaba, Ben Gizem Defne!</h1>
-    <p>Lise öğrencisi • Sanat ve bilime ilgi duyan • 2028 YKS'ye hazırlanan</p>
+    <h1>Gizem Defne</h1>
+    <p>Lise Öğrencisi | Sanat & Satranç Tutkunu</p>
+    <!-- Buraya kendi fotoğrafını koyabilirsin -->
+    <img src="https://via.placeholder.com/150" alt="Gizem Defne">
   </header>
 
   <nav>
     <a href="#hakkimda">Hakkımda</a>
-    <a href="#hobiler">İlgi Alanlarım</a>
     <a href="#dersler">Sevdiğim Dersler</a>
     <a href="#projeler">Projelerim</a>
-    <a href="#galeri">Galeri</a>
+    <a href="#faaliyetler">Faaliyetler</a>
+    <a href="#sergi">Resim Sergim</a>
     <a href="#hedefler">Hedeflerim</a>
-    <a href="#iletisim">İletişim</a>
   </nav>
 
   <section id="hakkimda">
     <h2>Hakkımda</h2>
-    <div class="card">
-      <p>Ben Gizem Defne, lise öğrencisiyim. Sanatla, bilimle ve sporla ilgileniyorum. Şu anda 2028 YKS için çalışıyorum. Gelecekte hem sanatsal hem de akademik alanlarda başarılı olmayı hedefliyorum.</p>
-    </div>
-  </section>
-
-  <section id="hobiler">
-    <h2>İlgi Alanlarım</h2>
-    <div class="card">
-      <ul>
-        <li>🎨 Resim yapmak (yağlı boya, akrilik)</li>
-        <li>🎹 Piyano çalmak</li>
-        <li>♟️ Satranç oynamak</li>
-      </ul>
-    </div>
+    <p>Merhaba! Ben Gizem Defne. Resim yapmak, piyano çalmak ve satranç oynamak en sevdiğim uğraşlar. 
+    Matematik, biyoloji ve kimya derslerini çok severim. 
+    Şu anda 2028 YKS sınavına hazırlanıyorum.</p>
   </section>
 
   <section id="dersler">
     <h2>Sevdiğim Dersler</h2>
-    <div class="card">
-      <ul>
-        <li>📐 Matematik</li>
-        <li>🧬 Biyoloji</li>
-        <li>⚗️ Kimya</li>
-      </ul>
-    </div>
+    <ul>
+      <li>Matematik</li>
+      <li>Biyoloji</li>
+      <li>Kimya</li>
+    </ul>
   </section>
 
   <section id="projeler">
     <h2>Projelerim</h2>
-    <div class="card">
-      <p>Şimdiye kadar yaptığım bazı projeler:</p>
-      <ul>
-        <li>📦 Kartondan mekanik ve dinamik aksamlı maketler</li>
-        <li>🎨 Yağlı boya ve akrilik tablolar</li>
-        <li>🌍 Amerika seyahatinden gözlemler ve notlar</li>
-      </ul>
-    </div>
+    <p>Kartondan misketlerle mekanik ve dinamik aksamlı maketler yaptım. Ayrıca yağlı boya ve akrilik tablolar üzerinde çalıştım.</p>
   </section>
 
-  <section id="galeri">
-    <h2>Galeri</h2>
-    <div class="card">
-      <p>Çalışmalarım ve ilgi alanlarımdan kareler:</p>
-      <div class="gallery">
-        <img src="https://via.placeholder.com/150" alt="Resim çalışması" />
-        <img src="https://via.placeholder.com/150" alt="Piyano çalarken" />
-        <img src="https://via.placeholder.com/150" alt="Satranç turnuvası" />
-      </div>
-    </div>
+  <section id="faaliyetler">
+    <h2>Faaliyetler</h2>
+    <p>Katıldığım bazı faaliyetler ve çalışmalarım:</p>
+    <ul>
+      <li>Sanat sergilerine katılım</li>
+      <li>Satranç turnuvaları</li>
+      <li>Piyano konserleri</li>
+    </ul>
+    <a href="https://www.artsonlinegallery.com/artist/gizem-defne-mete/" class="button" target="_blank">
+      Artsonline 1. Karma Sergi “25 Genç Sanatçı, 25 Çalışma”
+    </a>
+  </section>
+
+  <section id="sergi">
+    <h2>Resim Sergim</h2>
+    <p>Sanat çalışmalarımın yer aldığı sergiyi buradan ziyaret edebilirsiniz:</p>
+    <a href="https://www.artsonlinegallery.com/artist/gizem-defne-mete/" class="button" target="_blank">
+      Artsonline 1. Karma Sergi “25 Genç Sanatçı, 25 Çalışma”
+    </a>
   </section>
 
   <section id="hedefler">
     <h2>Hedeflerim</h2>
-    <div class="card">
-      <ul>
-        <li>♟️ Antalya'da satrançta milli takıma girmek</li>
-        <li>🏛️ Mimarlık okumak</li>
-        <li>🎯 2028 YKS'de başarılı olmak</li>
-      </ul>
-    </div>
-  </section>
-
-  <section id="iletisim">
-    <h2>İletişim</h2>
-    <div class="card contact-form">
-      <form>
-        <input type="text" placeholder="Adınız" required />
-        <input type="email" placeholder="E‑posta" required />
-        <textarea rows="5" placeholder="Mesajınız" required></textarea>
-        <button type="submit">Gönder</button>
-      </form>
-      <p>Ya da doğrudan e‑posta gönderebilirsiniz: <a href="mailto:gizemdefne@gmail.com">gizemdefne@gmail.com</a></p>
-    </div>
+    <p>Antalya’da satranç milli takımına girmek ve mimarlık okumak en büyük hedeflerimden. 
+    Bunun için çok çalışıyorum!</p>
   </section>
 
   <footer>
-    <p>© 2025 Gizem Defne – Tüm hakları saklıdır.</p>
+    <p>© 2025 Gizem Defne | Tüm Hakları Saklıdır</p>
   </footer>
+
 </body>
 </html>
+
+
 
