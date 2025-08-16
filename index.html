@@ -1,230 +1,139 @@
 <!doctype html>
 <html lang="tr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Ad Soyad | Lise Öğrencisi</title>
-  <meta name="description" content="Lise öğrencisi için basit kişisel web sitesi şablonu.">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gizem Defne - Kişisel Web Sitesi</title>
   <style>
-    /* Basit, anlaşılır ve kolayca düzenlenebilir stil */
-    :root{
-      --bg:#f7f7fb; --text:#1f2937; --muted:#6b7280;
-      --card:#ffffff; --accent:#2563eb; --border:#e5e7eb;
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f5f5;
+      color: #333;
     }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);}
-    a{color:var(--accent);text-decoration:none}
-    img{max-width:100%;display:block}
-
-    .container{width:min(980px,92%);margin-inline:auto}
-    header{position:sticky;top:0;background:var(--card);border-bottom:1px solid var(--border);}
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:.9rem 0}
-    .brand{font-weight:700}
-    .menu{display:flex;gap:1rem}
-    .menu a{padding:.45rem .7rem;border-radius:10px}
-    .menu a:hover{background:#f2f4f8}
-
-    .hero{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;align-items:center;padding:2rem 0}
-    .hero h1{margin:.2rem 0 0 0;font-size:2rem}
-    .tag{display:inline-block;background:#eef2ff;color:#3730a3;border:1px solid #c7d2fe;padding:.25rem .5rem;border-radius:999px;font-size:.85rem}
-    .subtitle{color:var(--muted)}
-
-    section{padding:1.6rem 0}
-    .section-title{font-size:1.25rem;margin:0 0 .8rem 0}
-
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
-    .card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1rem}
-    .list{margin:0;padding-left:1.1rem}
-    .list li{margin:.3rem 0}
-
-    .timeline{border-left:3px solid var(--border);padding-left:1rem;}
-    .timeline .item{margin:0 0 .9rem 0}
-    .timeline .item h4{margin:.2rem 0}
-
-    footer{border-top:1px solid var(--border);padding:1.2rem 0;margin-top:1rem;color:var(--muted);text-align:center}
-
-    /* Mobil uyum */
-    @media (max-width: 820px){
-      .hero{grid-template-columns:1fr}
-      .menu{flex-wrap:wrap}
+    header {
+      background: #4a90e2;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background: #357ABD;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    section {
+      padding: 40px;
+      max-width: 800px;
+      margin: auto;
+    }
+    h2 {
+      border-bottom: 2px solid #4a90e2;
+      padding-bottom: 5px;
+    }
+    .card {
+      background: white;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    footer {
+      background: #4a90e2;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
     }
   </style>
 </head>
 <body>
-  <!-- ÜST MENÜ -->
   <header>
-    <div class="container nav">
-      <div class="brand">Ad Soyad</div>
-      <nav class="menu" aria-label="Bölümler">
-        <a href="#hakkimda">Hakkımda</a>
-        <a href="#dersler">Dersler</a>
-        <a href="#projeler">Projeler/Etkinlikler</a>
-        <a href="#basarilar">Başarılar</a>
-        <a href="#iletisim">İletişim</a>
-      </nav>
-    </div>
+    <h1>Merhaba, Ben Gizem Defne!</h1>
+    <p>Lise öğrencisi • Sanat ve bilime ilgi duyan • 2028 YKS'ye hazırlanan</p>
   </header>
 
-  <main class="container">
-    <!-- KAHRAMAN BÖLÜMÜ -->
-    <section class="hero">
-      <div>
-        <span class="tag">Lise Öğrencisi</span>
-        <h1>Merhaba, ben <span style="color:var(--accent)">Ad Soyad</span>.</h1>
-        <p class="subtitle">STEM ve yabancı dile ilgi duyan, okul projeleri ve kulüp çalışmalarına aktif katılan bir öğrenciyim.</p>
-        <p class="subtitle">Hedefim: <strong>2026 YKS</strong> için düzenli çalışmak ve <strong>Bilgisayar Mühendisliği</strong> bölümünü kazanmak.</p>
-      </div>
-      <div>
-        <!-- Kendi fotoğrafını bu görselin yerine koyabilirsin -->
-        <img src="https://placehold.co/600x400?text=Profil+Fotografi" alt="Profil fotoğrafı veya hobi görseli">
-      </div>
-    </section>
+  <nav>
+    <a href="#hakkimda">Hakkımda</a>
+    <a href="#hobiler">İlgi Alanlarım</a>
+    <a href="#dersler">Sevdiğim Dersler</a>
+    <a href="#projeler">Projelerim</a>
+    <a href="#hedefler">Hedeflerim</a>
+    <a href="#iletisim">İletişim</a>
+  </nav>
 
-    <!-- HAKKIMDA -->
-    <section id="hakkimda">
-      <h2 class="section-title">Hakkımda</h2>
-      <div class="grid">
-        <article class="card">
-          <p>Ben <strong>Ad Soyad</strong>, <strong>X Anadolu Lisesi</strong> 10. sınıf öğrencisiyim. Boş zamanlarımda <em>satranç</em>, <em>resim</em> ve <em>piyano</em> ile ilgileniyorum. Bu sitede çalışmalarımı ve hedeflerimi paylaşıyorum.</p>
-          <ul class="list">
-            <li>📍 İstanbul, Türkiye</li>
-            <li>🎯 İlgi alanlarım: Matematik, Fizik, İngilizce, Web</li>
-            <li>🧠 Güçlü yanlar: Düzenli çalışma, merak, ekip çalışması</li>
-          </ul>
-        </article>
-        <article class="card">
-          <h3>Hedeflerim (Kısa/Kısa Orta)</h3>
-          <ul class="list">
-            <li>Her gün en az 2 saat tekrar ve 30 dk kitap okuma</li>
-            <li>Matematikte fonksiyonlar ve trigonometride hızlanmak</li>
-            <li>İngilizce B2 seviyesine yaklaşmak (konuşma pratiği)</li>
-            <li>2 küçük web projesi tamamlamak</li>
-          </ul>
-        </article>
-      </div>
-    </section>
+  <section id="hakkimda">
+    <h2>Hakkımda</h2>
+    <div class="card">
+      <p>Ben Gizem Defne, lise öğrencisiyim. Sanatla, bilimle ve sporla ilgileniyorum. Şu anda 2028 YKS için çalışıyorum. Gelecekte hem sanatsal hem de akademik alanlarda başarılı olmayı hedefliyorum.</p>
+    </div>
+  </section>
 
-    <!-- DERSLER -->
-    <section id="dersler">
-      <h2 class="section-title">Derslerim ve Konu Durumu</h2>
-      <div class="grid">
-        <article class="card">
-          <h3>Matematik</h3>
-          <ul class="list">
-            <li>✔️ Kümeler & Mantık</li>
-            <li>✔️ Denklem & Eşitsizlikler</li>
-            <li>⏳ Fonksiyonlar (çalışıyorum)</li>
-            <li>⏳ Trigonometri (tekrar gerekiyor)</li>
-          </ul>
-        </article>
-        <article class="card">
-          <h3>Fizik</h3>
-          <ul class="list">
-            <li>✔️ Fizik Bilimine Giriş</li>
-            <li>✔️ Hareket</li>
-            <li>⏳ Kuvvet ve Newton Yasaları</li>
-            <li>⬜ Enerji</li>
-          </ul>
-        </article>
-        <article class="card">
-          <h3>İngilizce</h3>
-          <ul class="list">
-            <li>✔️ Present Simple & Continuous</li>
-            <li>⏳ Past Simple</li>
-            <li>⬜ Present Perfect</li>
-            <li>⬜ Writing: Opinion Paragraph</li>
-          </ul>
-        </article>
-        <article class="card">
-          <h3>Diğer</h3>
-          <ul class="list">
-            <li>Kimya: Atom ve Periyodik Sistem ⬜</li>
-            <li>Biyoloji: Hücre ve Organeller ✔️</li>
-            <li>Tarih: İlk Türk Devletleri ⏳</li>
-            <li>Coğrafya: Harita Bilgisi ⬜</li>
-          </ul>
-        </article>
-      </div>
-      <p class="subtitle">İşaretler: ✔️ tamamlandı · ⏳ çalışılıyor · ⬜ sırada</p>
-    </section>
+  <section id="hobiler">
+    <h2>İlgi Alanlarım</h2>
+    <div class="card">
+      <ul>
+        <li>🎨 Resim yapmak (yağlı boya, akrilik)</li>
+        <li>🎹 Piyano çalmak</li>
+        <li>♟️ Satranç oynamak</li>
+      </ul>
+    </div>
+  </section>
 
-    <!-- PROJELER / ETKİNLİKLER -->
-    <section id="projeler">
-      <h2 class="section-title">Projeler & Etkinlikler</h2>
-      <div class="grid">
-        <article class="card">
-          <h3>Bilim Fuarı Posteri</h3>
-          <p>Basit elektrik devreleri ve Ohm kanunu üzerine poster hazırladım.</p>
-          <p><strong>Kazanım:</strong> Deney tasarımı, sunum yapma.</p>
-        </article>
-        <article class="card">
-          <h3>Satranç Kulübü</h3>
-          <p>Okul takımında <em>2. masa</em>. Haftada 2 gün antrenman yapıyorum.</p>
-          <p><strong>Kazanım:</strong> Stratejik düşünme, sabır.</p>
-        </article>
-        <article class="card">
-          <h3>Kişisel Blog (Basit)</h3>
-          <p>HTML ile 3 sayfalık küçük bir blog yaptım. (Bu site başlangıç noktası!)</p>
-          <p><strong>Kazanım:</strong> Temel HTML, düzenli yazma alışkanlığı.</p>
-        </article>
-      </div>
-    </section>
+  <section id="dersler">
+    <h2>Sevdiğim Dersler</h2>
+    <div class="card">
+      <ul>
+        <li>📐 Matematik</li>
+        <li>🧬 Biyoloji</li>
+        <li>⚗️ Kimya</li>
+      </ul>
+    </div>
+  </section>
 
-    <!-- BAŞARILAR / SERTİFİKALAR -->
-    <section id="basarilar">
-      <h2 class="section-title">Başarılar & Sertifikalar</h2>
-      <div class="timeline">
-        <div class="item">
-          <h4>Okul İçi Matematik Yarışması – 1.lik (2024)</h4>
-          <p>Kapsam: Denklem çözme, problem çözme</p>
-        </div>
-        <div class="item">
-          <h4>İngilizce Konuşma Günü – En İyi Sunum (2023)</h4>
-          <p>Konu: "Study Habits" kısa sunum</p>
-        </div>
-        <div class="item">
-          <h4>Katılım Belgesi – Kodlama Atölyesi (2022)</h4>
-          <p>Scratch ve temel algoritma</p>
-        </div>
-      </div>
-    </section>
+  <section id="projeler">
+    <h2>Projelerim</h2>
+    <div class="card">
+      <p>Şimdiye kadar yaptığım bazı projeler:</p>
+      <ul>
+        <li>📦 Kartondan mekanik ve dinamik aksamlı maketler</li>
+        <li>🎨 Yağlı boya ve akrilik tablolar</li>
+        <li>🌍 Amerika seyahatinden gözlemler ve notlar</li>
+      </ul>
+    </div>
+  </section>
 
-    <!-- İLETİŞİM -->
-    <section id="iletisim">
-      <h2 class="section-title">İletişim</h2>
-      <div class="grid">
-        <article class="card">
-          <p>Projelerim veya kulüp çalışmaları için benimle iletişime geçebilirsiniz.</p>
-          <ul class="list">
-            <li>📧 E‑posta: <a href="mailto:ad@ornek.com">ad@ornek.com</a></li>
-            <li>📱 Instagram: <a href="#">@kullaniciadim</a></li>
-            <li>🐙 GitHub: <a href="#">github.com/kullanici</a></li>
-          </ul>
-        </article>
-        <article class="card">
-          <h3>Kısa Mesaj Kutusu (İsteğe Bağlı)</h3>
-          <p>Statik sitelerde form çalışması için <em>Formspree</em>, <em>Google Forms</em> gibi servisleri kullanabilirsin.</p>
-          <p class="subtitle">Not: Bu şablon sadece HTML/CSS içerir, arka uç yoktur.</p>
-        </article>
-      </div>
-    </section>
-  </main>
+  <section id="hedefler">
+    <h2>Hedeflerim</h2>
+    <div class="card">
+      <ul>
+        <li>♟️ Antalya'da satrançta milli takıma girmek</li>
+        <li>🏛️ Mimarlık okumak</li>
+        <li>🎯 2028 YKS'de başarılı olmak</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="iletisim">
+    <h2>İletişim</h2>
+    <div class="card">
+      <p>Bana ulaşmak için e‑posta gönderebilirsiniz: <a href="mailto:gizemdefne@gmail.com">gizemdefne@gmail.com</a></p>
+    </div>
+  </section>
 
   <footer>
-    <div class="container">© <span id="yil"></span> Ad Soyad — Öğrenmeye Devam!</div>
+    <p>© 2025 Gizem Defne – Tüm hakları saklıdır.</p>
   </footer>
-
-  <script>
-    // Yılı otomatik yaz
-    document.getElementById('yil').textContent = new Date().getFullYear();
-  </script>
-
-  <!-- KOLAY DÜZENLEME İPUÇLARI
-    1) "Ad Soyad" ve iletişim bilgilerini kendi bilgilerinizle değiştirin.
-    2) Dersler bölümündeki listeleri sınav/konu durumunuza göre güncelleyin.
-    3) Projeler bölümüne okul içi/okul dışı etkinlikleri ekleyin (tarih ve kazanım). 
-    4) Renkleri değiştirmek için :root değişkenlerine bakın (ör. --accent).
-    5) Tek dosya olarak telefonla uyumludur; başka sayfalar eklemek isterseniz bağlantıları menüye koyun.
-  -->
 </body>
 </html>
